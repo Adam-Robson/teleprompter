@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="teleprompter/teleprompter.csproj" />
+  <Project Path="teleprompterlib/teleprompterlib.csproj" />
+</Solution>
