@@ -2,5 +2,5 @@ namespace TeleprompterLib;
 
 public interface ITeleprompterRunner
 {
-    Task RunAsync(string file, CancellationToken cancellationToken = default);
+    Task<TeleprompterRunResult> RunAsync(string file, CancellationToken cancellationToken = default);
 }
