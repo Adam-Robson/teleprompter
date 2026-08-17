@@ -17,4 +17,10 @@ public class TeleprompterConfig
     {
         Done = true;
     }
+    public bool Paused { get; private set; }
+
+    public void TogglePause()
+    {
+        Paused = !Paused;
+    }
 }
