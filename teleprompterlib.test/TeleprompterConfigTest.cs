@@ -53,4 +53,16 @@ public class TeleprompterConfigTest
         config.SetDone();
         Assert.True(config.Done);
     }
+
+    [Fact]
+    public void TogglePause_FlipsPausedState()
+    {
+        var config = new TeleprompterConfig();
+
+        Assert.False(config.Paused);
+        config.TogglePause();
+        Assert.True(config.Paused);
+        config.TogglePause();
+        Assert.False(config.Paused);
+    }
 }
