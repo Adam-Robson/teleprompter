@@ -10,4 +10,8 @@ services.AddTransient<ITeleprompterRunner, TeleprompterRunner>();
 await using var provider = services.BuildServiceProvider();
 var runner = provider.GetRequiredService<ITeleprompterRunner>();
 
-await runner.RunAsync("sampleQuotes.txt");
+var result = await runner.RunAsync("sampleQuotes.txt");
+
+Console.WriteLine();
+Console.WriteLine($"Words displayed: {result.WordsDisplayed}");
+Console.WriteLine($"Pace: {result.WordsPerMinute:F0} wpm");
