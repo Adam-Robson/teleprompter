@@ -9,6 +9,7 @@ public sealed class FakeClock : IClock
 
     public Task Delay(int milliseconds, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         RecordedDelays.Add(milliseconds);
         UtcNow = UtcNow.AddMilliseconds(milliseconds);
         return Task.CompletedTask;
